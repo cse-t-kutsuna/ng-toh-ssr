@@ -147,9 +147,9 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-server@~5.0.0":
-  version "5.0.5"
-  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-5.0.5.tgz#2ebc9076b40c16e852657c23161f10cccd954e5a"
+"@angular/platform-server@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-5.1.0.tgz#c28c0e05ce423ec99f299478496dd5066e1b41b6"
   dependencies:
     domino "^1.0.29"
     tslib "^1.7.1"
@@ -183,6 +183,14 @@
     source-map "^0.5.6"
     tree-kill "^1.0.0"
 
+"@nguniversal/express-engine@^5.0.0-beta.5":
+  version "5.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@nguniversal/express-engine/-/express-engine-5.0.0-beta.5.tgz#3cbc0fb7f928012d61240681631581fb0ad327f5"
+
+"@nguniversal/module-map-ngfactory-loader@^5.0.0-beta.5":
+  version "5.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@nguniversal/module-map-ngfactory-loader/-/module-map-ngfactory-loader-5.0.0-beta.5.tgz#d86497e704f702e1a18bbcab5dd6586057941fa5"
+
 "@schematics/angular@~0.1.0":
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.1.10.tgz#654d867992277484ed2d82d015b2d3b6ff87b93d"
@@ -192,6 +200,27 @@
 "@schematics/schematics@0.0.10":
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/@schematics/schematics/-/schematics-0.0.10.tgz#b27b49a1a5482dc6c1c93fb3c20371c95874938b"
+
+"@types/body-parser@*":
+  version "1.16.8"
+  resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.16.8.tgz#687ec34140624a3bec2b1a8ea9268478ae8f3be3"
+  dependencies:
+    "@types/express" "*"
+    "@types/node" "*"
+
+"@types/express-serve-static-core@*":
+  version "4.0.57"
+  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.0.57.tgz#3cd8ab4b11d5ecd70393bada7fc1c480491537dd"
+  dependencies:
+    "@types/node" "*"
+
+"@types/express@*", "@types/express@^4.0.39":
+  version "4.0.39"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.0.39.tgz#1441f21d52b33be8d4fa8a865c15a6a91cd0fa09"
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/serve-static" "*"
 
 "@types/jasmine@*":
   version "2.8.2"
@@ -207,6 +236,14 @@
   dependencies:
     "@types/jasmine" "*"
 
+"@types/mime@*":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
+
+"@types/node@*":
+  version "8.0.56"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.56.tgz#c4652f88d7a677e26ccc16c1485c282ce28f1ce9"
+
 "@types/node@^6.0.45", "@types/node@^6.0.46":
   version "6.0.92"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.92.tgz#e7f721ae282772e12ba2579968c00d9cce422c5d"
@@ -218,6 +255,13 @@
 "@types/selenium-webdriver@^2.53.35", "@types/selenium-webdriver@~2.53.39":
   version "2.53.43"
   resolved "https://registry.yarnpkg.com/@types/selenium-webdriver/-/selenium-webdriver-2.53.43.tgz#2de3d718819bc20165754c4a59afb7e9833f6707"
+
+"@types/serve-static@*":
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.13.1.tgz#1d2801fa635d274cd97d4ec07e26b21b44127492"
+  dependencies:
+    "@types/express-serve-static-core" "*"
+    "@types/mime" "*"
 
 abbrev@1:
   version "1.1.1"
