@@ -12,7 +12,9 @@
     "build:prod": "concurrently --names 'browser,server' 'ng build --prod --progress false --base-href /prod/ --app 0' 'ng build --prod --progress false --base-href /prod/ --app 1 --output-hashing false'",
     "prebuild:server": "npm run build:prod",
     "build:server": "webpack --config server/webpack.config.js",
-    "start:server": "node dist/server/start.js"
+    "start:server": "node dist/server/start.js",
+    "predeploy": "npm run build:prod",
+    "deploy": "serverless deploy --stage prod"
   },
   "keywords": [],
   "author": "",
