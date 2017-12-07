@@ -1,4 +1,5 @@
-import { NgModule }       from '@angular/core';
+import { NgModule, Inject, PLATFORM_ID, APP_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
@@ -19,7 +20,7 @@ import { MessagesComponent }    from './messages/messages.component';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'toh-pt6-ssr-lambda'}),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -42,4 +43,13 @@ import { MessagesComponent }    from './messages/messages.component';
   providers: [ HeroService, MessageService ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(APP_ID) private appId: string,
+  ) {
+    const platform = isPlatformBrowser(platformId) ? 'browser' : 'server';
+
+    console.log({platform, appId});
+  }
+}
