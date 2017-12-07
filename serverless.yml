@@ -1,0 +1,20 @@
+service: toh-pt6-ssr-lambda
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: ${env:AWS_REGION}
+  memorySize: 128
+plugins:
+- serverless-webpack
+custom:
+  webpack: lambda/webpack.config.js
+functions:
+  main:
+    handler: lambda/index.default
+    events:
+    - http:
+        path: /
+        method: get
+    - http:
+        path: "{proxy+}"
+        method: get
