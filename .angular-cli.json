@@ -5,8 +5,9 @@
   },
   "apps": [
     {
+      "platform": "browser",
       "root": "src",
-      "outDir": "dist",
+      "outDir": "dist/browser",
       "assets": [
         "assets",
         "favicon.ico"
