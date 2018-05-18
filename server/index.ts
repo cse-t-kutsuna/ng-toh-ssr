@@ -13,7 +13,7 @@ import {join} from 'path';
 
 /* Temporary fix: using non blocking ngFor on server
 import {NgForOf} from "@angular/common";
-import {NgForOfNb} from "../src/app/server-common/src/directives";
+import {NgForOfNb} from "./angular/src/directives";
 
 (<any>NgForOf).prototype._applyChanges = NgForOfNb.prototype._applyChanges;
 */
