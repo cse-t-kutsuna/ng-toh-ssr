@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tour of Heroes';
+  constructor() {
+    setInterval(() => {
+      console.log('interval 500');
+    }, 1000);
+  }
 }

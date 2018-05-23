@@ -1,0 +1,22 @@
+<h2>My Enemies</h2>
+
+<ul class="enemies">
+  <li *ngFor="let enemy of enemies$ | async ">
+    <a routerLink="/detail/{{enemy.id}}">
+      <span class="badge">{{enemy.id}}</span> {{enemy.name}}
+    </a>
+    <button class="delete" title="delete enemy">x</button>
+  </li>
+</ul>
+
+<dfp-ad adUnit="/35096353/pub-showcase" responsive>
+  <dfp-size [width]="320" [height]="50"></dfp-size>
+  <dfp-size [width]="728" [height]="90"></dfp-size>
+  <dfp-size [width]="970" [height]="90"></dfp-size>
+  <dfp-targeting key="food">
+    <dfp-value>chicken</dfp-value>
+    <dfp-value>meatballs</dfp-value>
+    <dfp-value>ice cream</dfp-value>
+  </dfp-targeting>
+</dfp-ad>
+

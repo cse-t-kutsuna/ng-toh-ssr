@@ -17,6 +17,9 @@ import { HeroSearchComponent }  from './hero-search/hero-search.component';
 import { HeroService }          from './hero.service';
 import { MessageService }       from './message.service';
 import { MessagesComponent }    from './messages/messages.component';
+import { EnemiesComponent } from './enemies/enemies.component';
+import { DfpModule } from 'ngx-dfp';
+import {MainComponent} from "./main/main.component";
 
 @NgModule({
   imports: [
@@ -24,6 +27,17 @@ import { MessagesComponent }    from './messages/messages.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    DfpModule
+/*
+    DfpModule.forRoot({
+      idleLoad: true,
+      singleRequestMode: true,
+      onSameNavigation: 'refresh',
+      globalTargeting: {
+        food: ['chicken', 'meatballs']
+      }
+    })
+*/
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -34,11 +48,13 @@ import { MessagesComponent }    from './messages/messages.component';
   ],
   declarations: [
     AppComponent,
+    MainComponent,
     DashboardComponent,
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    EnemiesComponent
   ],
   providers: [ HeroService, MessageService ],
   bootstrap: [ AppComponent ]

@@ -8,6 +8,7 @@ import * as Koa from 'koa';
 import * as route from 'koa-route';
 import * as serve from 'koa-static';
 import * as accesslog from 'koa-accesslog';
+import * as cors from '@koa/cors';
 
 import {join} from 'path';
 
@@ -42,22 +43,37 @@ import {readFileSync} from "fs";
 
 
 let heroes = [];
-for (let i = 0; i < 5000; i++) {
+for (let i = 0; i < 500; i++) {
   heroes.push({id: i, name: `Hero-${i}`});
+}
+
+let enemies = [];
+for (let i = 0; i < 500; i++) {
+  enemies.push({id: i, name: `Enemy-${i}`});
 }
 
 // app.use(morgan('dev'));
 app.use(accesslog());
+app.use(cors());
 
 // Our index.html we'll use as our template
 const template = readFileSync(join(process.cwd(), 'dist', 'browserApp', 'index.html')).toString();
 
 app.use(route.get('/api/heroes', (ctx) => {
-  ctx.body = heroes;
+  // console.log('query name: ' + ctx.request.query.name);
+  if (ctx.request.query.name) {
+    ctx.body = heroes.filter(hero => hero.name.includes(ctx.request.query.name));
+  } else {
+    ctx.body = heroes;
+  }
 }));
 
 app.use(route.get('/api/heroes/:id', (ctx, id) => {
   ctx.body = heroes.find((hero) => hero.id === +id);
+}));
+
+app.use(route.get('/api/enemies', (ctx) => {
+  ctx.body = enemies;
 }));
 
 // app.set('view engine', 'html');
